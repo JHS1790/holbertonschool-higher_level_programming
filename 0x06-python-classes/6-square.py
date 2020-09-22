@@ -1,19 +1,21 @@
 #!/usr/bin/python3
 """File for class Sqaure"""
+
+
 class Square:
     """class to build a square
 
     Attributes:
-        size (int): size of the square
-        position (tuple): position of the square down and right
+    size (int): size of the square
+    position (tuple): position of the square down and right
     """
-    def __init__(self, size=0, position=(0,0)):
-    """__init__ function for the Square class
+    def __init__(self, size=0, position=(0, 0)):
+        """__init__ function for the Square class
 
-    Args:
+        Args:
         size (int): size of the square, attribute assignment
         position (tuple): position of the square, attribute assignment
-    """
+        """
         self.size = size
         self.position = position
 
