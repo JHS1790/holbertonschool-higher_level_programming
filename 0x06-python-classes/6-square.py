@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""File for class Sqaure"""
 class Square:
     """class to build a square
 
@@ -17,17 +18,17 @@ class Square:
         self.position = position
 
     @property
-    """int: size of the square"""
     def size(self):
+        """int: size of the square"""
         return self.__size
 
     @size.setter
-    """
-    Raises:
-        TypeError: if value is not an int
-        ValueError: if value is less than zero
-    """
     def size(self, value):
+        """
+        Raises:
+            TypeError: if value is not an int
+            ValueError: if value is less than zero
+        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -36,16 +37,16 @@ class Square:
             self.__size = value
 
     @property
-    """tuple: position of square right and down"""
     def position(self):
+        """tuple: position of square right and down"""
         return self.__position
 
     @position.setter
-    """
-    Raises:
-        TypeError: if value is not a tuple of two positive integers
-    """
     def position(self, value):
+        """
+        Raises:
+            TypeError: if value is not a tuple of two positive integers
+        """
         isit = True
         if type(value) is tuple:
             if isinstance(value[0], int) and value[0] > 0:
