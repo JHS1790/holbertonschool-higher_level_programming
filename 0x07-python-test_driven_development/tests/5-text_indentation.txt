@@ -1,0 +1,11 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("What the fuck did you just fucking say about me, you little bitch? Ill have you know I graduated top of my class in the Navy Seals, and Ive been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills.")
+What the fuck did you just fucking say about me, you little bitch?
+<BLANKLINE>
+Ill have you know I graduated top of my class in the Navy Seals, and Ive been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills.
+<BLANKLINE>
+
+>>> text_indentation(69)
+Traceback (most recent call last):
+TypeError: text must be a string
