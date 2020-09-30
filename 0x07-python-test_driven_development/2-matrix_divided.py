@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """1. Divide a matrix """
+
+
 def matrix_divided(matrix, div):
     """Divides a Matrix
 
@@ -29,8 +31,8 @@ def matrix_divided(matrix, div):
                     if matrix[x] == []:
                         WrongType = True
                     if (
+                            isinstance(matrix[x][y], int) or
                             isinstance(matrix[x][y], int)
-                            or isinstance(matrix[x][y], int)
                     ):
                         workmat[x].append(matrix[x][y])
                     else:
@@ -45,17 +47,17 @@ def matrix_divided(matrix, div):
     else:
         WrongType = True
     if WrongType:
-        raise TypeError(\
-        "matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of integers/floats")
     if TooLong:
-        raise TypeError(\
-        "Each row of the matrix must have the same size")
+        raise TypeError(
+            "Each row of the matrix must have the same size")
     if not isinstance(div, float) and not isinstance(div, int):
-        raise TypeError(\
-        "div must be a number")
+        raise TypeError(
+            "div must be a number")
     if div == 0:
-        raise ZeroDivisionError(\
-        "division by zero")
+        raise ZeroDivisionError(
+            "division by zero")
 
     for x in range(len(workmat)):
         for y in range(len(workmat[x])):
