@@ -33,7 +33,7 @@ Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 >>> print(matrix_divided(GoodMatrix, float("inf")))
-[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
 >>> matrix_divided(GoodMatrix)
 Traceback (most recent call last):
