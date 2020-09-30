@@ -9,3 +9,7 @@ Ill have you know I graduated top of my class in the Navy Seals, and Ive been in
 >>> text_indentation(69)
 Traceback (most recent call last):
 TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
