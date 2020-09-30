@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """4. Text indentation"""
+
+
 def text_indentation(text):
     """creates new lines in a string
 
@@ -16,12 +18,14 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     for x in range(len(text)):
         if (
-                text[x] == '.'
-                or text[x] == '?'
-                or text[x] == ':'
+                text[x] == '.' or
+                text[x] == '?' or
+                text[x] == ':'
         ):
             parsed.append(text[y:x + 1])
             y = x + 1
+        if x == len(text) - 1:
+            parsed.append(text[y:x + 1])
         if y < len(text) and text[y] == ' ':
             y += 1
     for x in range(len(parsed)):
