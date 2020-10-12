@@ -81,8 +81,8 @@ class TestRectangleMethods(unittest.TestCase):
         r1 = Rectangle(2, 2)
         self.assertAlmostEqual(r1.area(), 4)
 
-    def test_display(self):
-        """test_display: test the display method"""
+    def test_display1(self):
+        """test_display1: test the display method"""
         import sys
         from io import StringIO
 
@@ -94,6 +94,22 @@ class TestRectangleMethods(unittest.TestCase):
             recdis.display()
             output = out.getvalue().strip()
             self.assertEqual(output, "##\n##")
+        finally:
+            sys.stdout = saved_stdout
+
+    def test_display2(self):
+        """test_display2: test the display method with x and y"""
+        import sys
+        from io import StringIO
+
+        recdis = Rectangle(2, 2, 2, 2)
+        saved_stdout = sys.stdout
+        try:
+            out = StringIO()
+            sys.stdout = out
+            recdis.display()
+            output = out.getvalue().strip()
+            self.assertEqual(output, "##\n  ##")
         finally:
             sys.stdout = saved_stdout
 
