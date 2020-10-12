@@ -25,6 +25,12 @@ class Rectangle(Base):
     def area(self):
         return self.width * self.height
 
+    def display(self):
+        for i in range(self.height):
+            for j in range(self.width):
+                print("#", end = "")
+            print()
+
     @property
     def width(self):
         """width: getter for __width
@@ -112,3 +118,21 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
+
+    def __str__(self):
+        """"__str__: string representation method
+
+        Return:
+        the string output
+        """
+        output = "[Rectangle] ("
+        output += str(self.id)
+        output += ") "
+        output += str(self.x)
+        output += "/"
+        output += str(self.y)
+        output += " - "
+        output += str(self.width)
+        output += "/"
+        output += str(self.height)
+        return output
