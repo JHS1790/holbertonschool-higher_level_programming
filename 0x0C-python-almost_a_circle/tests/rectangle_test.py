@@ -62,3 +62,11 @@ class TestRectangleFailure(unittest.TestCase):
         """test_y_failure: test y exceptions"""
         with self.assertRaises(TypeError): Rectangle(9, 8, 7, {})
         with self.assertRaises(ValueError): Rectangle(4, 5, 6, -7)
+
+class TestRectangleMethods(unittest.TestCase):
+    """TestRectangleMethods: Test methods in the Rectangle class"""
+
+    def test_area(self):
+        """test_area: test the area method"""
+        r1 = Rectangle (2, 2)
+        self.assertAlmostEqual(r1.area(), 4)
