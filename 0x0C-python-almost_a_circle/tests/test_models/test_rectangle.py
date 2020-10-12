@@ -119,7 +119,19 @@ class TestRectangleMethods(unittest.TestCase):
         self.assertEqual(str(recstr), "[Rectangle] (12) 2/1 - 4/6")
 
     def test_update1(self):
-        """test_update1: tests the update method"""
+        """test_update1: tests args in the update method"""
         recup = Rectangle(10, 10, 10, 10)
         recup.update(89, 2, 3, 4, 5)
         self.assertEqual(str(recup), "[Rectangle] (89) 4/5 - 2/3")
+
+    def test_update2(self):
+        """test_update2: test kwargs in the update method"""
+        recup = Rectangle(10, 10, 10, 10, 1)
+        recup.update(height=1)
+        self.assertEqual(str(recup), "[Rectangle] (1) 10/10 - 10/1")
+        recup.update(width=1, x=2)
+        self.assertEqual(str(recup), "[Rectangle] (1) 2/10 - 1/1")
+        recup.update(y=1, width=2, x=3, id=89)
+        self.assertEqual(str(recup), "[Rectangle] (89) 3/1 - 2/1")
+        recup.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(str(recup), "[Rectangle] (89) 1/3 - 4/2")
