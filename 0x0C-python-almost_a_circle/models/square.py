@@ -32,6 +32,31 @@ class Square(Rectangle):
         output += str(self.width)
         return output
 
+    def update(self, *args, **kwargs):
+        """update: updates the instance arguments
+        Args:
+        *args: voodoo black magic shit
+        **kwargs: black voodoo magic shit on pervatin
+        """
+        if args:
+            if len(args) >= 1:
+                super(Rectangle, self).__init__(id=args[0])
+            if len(args) >= 2:
+                self.size = args[1]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
+        else:
+            if 'id' in kwargs:
+                super(Rectangle, self).__init__(kwargs['id'])
+            if 'size' in kwargs:
+                self.size = kwargs['size']
+            if 'x' in kwargs:
+                self.x = kwargs['x']
+            if 'y' in kwargs:
+                self.y = kwargs['y']
+
     @property
     def size(self):
         """size: getter for size"""
@@ -40,5 +65,5 @@ class Square(Rectangle):
     @size.setter
     def size(self, size):
         """size: setter for size"""
-        self.__width = size
-        self.__height = size
+        Rectangle.width.fset(self, size)
+        Rectangle.height.fset(self, size)
