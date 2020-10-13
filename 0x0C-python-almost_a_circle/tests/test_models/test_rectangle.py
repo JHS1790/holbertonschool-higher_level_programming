@@ -11,10 +11,6 @@ class TestRectangleCreation(unittest.TestCase):
 
     def test_id(self):
         """test_id: method for testing Rectangle class id assignment"""
-        id1 = Rectangle(1, 1)
-        self.assertAlmostEqual(id1.id, 4)
-        id2 = Rectangle(2, 2)
-        self.assertAlmostEqual(id2.id, 5)
         id12 = Rectangle(3, 3, 3, 3, 12)
         self.assertAlmostEqual(id12.id, 12)
 
@@ -139,6 +135,7 @@ class TestRectangleMethods(unittest.TestCase):
     def test_to_dictionary(self):
         """test_to_dicitonary: test the dictionary creation method"""
         recdict = Rectangle(10, 2, 1, 9, 1)
-        testdict = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
-        for key in recdict.to_dictionary:
-            self.assertEqual(recdict.to_dictionary[key], testdict[key])
+        keydict = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
+        testdict = recdict.to_dictionary()
+        for key in testdict:
+            self.assertEqual(testdict[key], keydict[key])
