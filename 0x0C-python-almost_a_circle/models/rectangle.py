@@ -65,6 +65,20 @@ class Rectangle(Base):
             if 'y' in kwargs:
                 self.y = kwargs['y']
 
+    def to_dictionary(self):
+        """to_dictionary: gives a dictionary representation of the current
+        instance
+
+        Returns:
+        __dict__ of the current instance
+        """
+        unmangled_dict = self.__dict__
+        unmangled_dict['height'] = unmangled_dict.pop('_Rectangle__height')
+        unmangled_dict['width'] = unmangled_dict.pop('_Rectangle__width')
+        unmangled_dict['x'] = unmangled_dict.pop('_Rectangle__x')
+        unmangled_dict['y'] = unmangled_dict.pop('_Rectangle__y')
+        return unmangled_dict
+
     @property
     def width(self):
         """width: getter for __width

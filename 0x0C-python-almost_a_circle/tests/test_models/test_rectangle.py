@@ -135,3 +135,10 @@ class TestRectangleMethods(unittest.TestCase):
         self.assertEqual(str(recup), "[Rectangle] (89) 3/1 - 2/1")
         recup.update(x=1, height=2, y=3, width=4)
         self.assertEqual(str(recup), "[Rectangle] (89) 1/3 - 4/2")
+
+    def test_to_dictionary(self):
+        """test_to_dicitonary: test the dictionary creation method"""
+        recdict = Rectangle(10, 2, 1, 9, 1)
+        testdict = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
+        for key in recdict.to_dictionary:
+            self.assertEqual(recdict.to_dictionary[key], testdict[key])
