@@ -23,9 +23,11 @@ class Rectangle(Base):
         self.y = y
 
     def area(self):
+        """docstrings for the blood god"""
         return self.width * self.height
 
     def display(self):
+        """Oh? You think the blood god would be disatisfied? I beg to differ"""
         for i in range(self.y):
             print()
         for i in range(self.height):
