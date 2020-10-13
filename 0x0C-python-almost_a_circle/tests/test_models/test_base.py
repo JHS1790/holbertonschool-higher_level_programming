@@ -18,8 +18,8 @@ class TestBase(unittest.TestCase):
         id12 = Base(12)
         self.assertAlmostEqual(id12.id, 12)
 
-    def test_json_string(self):
-        """test_json_string: test the to_json_string method"""
+    def test_python2json(self):
+        """test_python2json: test the to_json_string method"""
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
@@ -28,3 +28,12 @@ class TestBase(unittest.TestCase):
             json.JSONEncoder().encode([dictionary])
             )
 
+    def test_json2python(self):
+        """test_json2python: test the from_json_string method"""
+        list_input = [
+            {'id': 89, 'width': 10, 'height': 4},
+            {'id': 7, 'width': 1, 'height': 7}
+        ]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        self.assertEqual(list_input, list_output)

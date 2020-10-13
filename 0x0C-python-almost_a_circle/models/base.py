@@ -40,6 +40,16 @@ class Base():
             return "[]"
         return json.JSONEncoder().encode(list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """from_json_string: turns a json string into a dict list
+
+        Args:
+        json_string: input string"""
+        if json_string is None or "":
+            return ""
+        return json.JSONDecoder().decode(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """save_to_file: saves a json string to a file
