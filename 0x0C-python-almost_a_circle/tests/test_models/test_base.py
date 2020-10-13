@@ -27,3 +27,4 @@ class TestBase(unittest.TestCase):
             json_dictionary,
             json.JSONEncoder().encode([dictionary])
             )
+
