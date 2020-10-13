@@ -2,6 +2,7 @@
 """base.py: file for Base class"""
 import json
 
+
 class Base():
     """
     Base class
