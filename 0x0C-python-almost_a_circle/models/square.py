@@ -64,12 +64,12 @@ class Square(Rectangle):
         Returns:
         __dict__ of the current instance
         """
-        unmangled_dict = self.__dict__
-        unmangled_dict.pop('_Rectangle__height')
-        unmangled_dict['size'] = unmangled_dict.pop('_Rectangle__width')
-        unmangled_dict['x'] = unmangled_dict.pop('_Rectangle__x')
-        unmangled_dict['y'] = unmangled_dict.pop('_Rectangle__y')
-        return unmangled_dict
+        return {
+            "id": self.id,
+            "size": self.width,
+            "x": self.x,
+            "y": self.y
+        }
 
     @property
     def size(self):

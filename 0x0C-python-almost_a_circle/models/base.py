@@ -2,7 +2,6 @@
 """base.py: file for Base class"""
 import json
 
-
 class Base():
     """
     Base class
@@ -74,3 +73,35 @@ class Base():
             debug_check = False
         if debug_check:
             print("fix your shit")
+
+    @classmethod
+    def create(cls, **dictionary):
+        """create: intruding on the realm of God
+
+        Args:
+        **dictionary: Sin
+        """
+        dummy_thicc = cls(1, 1)
+        dummy_thicc.update(**dictionary)
+        return dummy_thicc
+
+    @classmethod
+    def load_from_file(cls):
+        """load_from_file: create an instance from a file"""
+        file_list = []
+        instance_list = []
+        if cls.__name__ is 'Rectangle':
+            with open("./Rectangle.json", mode='r') as WorkingFile:
+                file_list = WorkingFile.read()
+                print("in file")
+        if cls.__name__ is 'Square':
+            with open("./Square.json", mode='r') as WorkingFile:
+                file_list = WorkingFile.read()
+        if file_list is []:
+            return file_list
+        print(file_list)
+        file_list = cls.from_json_string(file_list)
+        for item in file_list:
+            print(item)
+            instance_list += [cls.create(**item)]
+        return instance_list

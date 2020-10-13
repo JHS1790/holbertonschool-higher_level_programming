@@ -42,18 +42,7 @@ class Rectangle(Base):
         *args: voodoo black magic shit
         **kwargs: black voodoo magic shit on pervatin
         """
-        if args:
-            if len(args) >= 1:
-                super().__init__(args[0])
-            if len(args) >= 2:
-                self.width = args[1]
-            if len(args) >= 3:
-                self.height = args[2]
-            if len(args) >= 4:
-                self.x = args[3]
-            if len(args) >= 5:
-                self.y = args[4]
-        else:
+        if not args or args is []:
             if 'id' in kwargs:
                 super().__init__(kwargs['id'])
             if 'width' in kwargs:
@@ -64,6 +53,17 @@ class Rectangle(Base):
                 self.x = kwargs['x']
             if 'y' in kwargs:
                 self.y = kwargs['y']
+        else:
+            if len(args) >= 1:
+                super().__init__(args[0])
+            if len(args) >= 2:
+                self.width = args[1]
+            if len(args) >= 3:
+                self.height = args[2]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
 
     def to_dictionary(self):
         """to_dictionary: gives a dictionary representation of the current
@@ -72,12 +72,13 @@ class Rectangle(Base):
         Returns:
         __dict__ of the current instance
         """
-        unmangled_dict = self.__dict__
-        unmangled_dict['height'] = unmangled_dict.pop('_Rectangle__height')
-        unmangled_dict['width'] = unmangled_dict.pop('_Rectangle__width')
-        unmangled_dict['x'] = unmangled_dict.pop('_Rectangle__x')
-        unmangled_dict['y'] = unmangled_dict.pop('_Rectangle__y')
-        return unmangled_dict
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
 
     @property
     def width(self):
