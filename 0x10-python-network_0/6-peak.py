@@ -2,11 +2,10 @@
 """6. Find a peak"""
 
 def find_peak(list_of_integers):
-	"""function that finds a peak in a list of unsorted integers."""
-	if list_of_integers:
-		n = list_of_integers[0]
-		for x in range(len(list_of_integers)):
-			if list_of_integers[x] > n:
-				n = list_of_integers[x]
-		return n
-	return None
+    """function that finds a peak in a list of unsorted integers."""
+    if list_of_integers:
+        for x in range(len(list_of_integers)):
+            if list_of_integers[x] > n:
+                n = list_of_integers[x]
+        return n
+    return None
