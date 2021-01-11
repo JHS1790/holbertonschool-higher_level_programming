@@ -14,7 +14,7 @@ if __name__ == "__main__":
     except IndexError:
         q = ""
     r = requests.post(
-        'http://35c54c3227ed.7b77981b.hbtn-cod.io:5000/search_user',
+        'http://0.0.0.0:5000/search_user',
         data={"q": q}
         )
     try:
