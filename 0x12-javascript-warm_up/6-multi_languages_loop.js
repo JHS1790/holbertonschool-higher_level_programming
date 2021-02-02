@@ -1,0 +1,8 @@
+#!/usr/bin/node
+/* a script that prints 3 lines: (like 1-multi_languages.js) but by using an array of string and a loop */
+
+const arrstr = ['C is fun', 'Python is cool', 'Javascript is amazing'];
+let i;
+for (i = 0; i < arrstr.length; i++) {
+  console.log(arrstr[i]);
+}
